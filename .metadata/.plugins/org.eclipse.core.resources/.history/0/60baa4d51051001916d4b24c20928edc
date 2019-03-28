@@ -1,0 +1,9 @@
+package com.member.mapper;
+
+import com.member.domain.MemberVO;
+
+public interface MemberMapper {
+	
+	// 회원 생성
+	public void MemberInsert(MemberVO member)throws Exception;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- BootStrap CDN -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<title>Member</title>
+</head>
+<body>
+	<h3>Member</h3>
+	<div style="padding: 30px;">
+		<div class="form-group">
+			<label>Name</label> <span th:text = "${member.name}"></span>
+		</div>
+		<div class="form-group">
+			<label>Age</label> <span th:text ="${member.age}"></span>
+		</div>
+		<div class="form-group">
+			<input type="button" value="update"
+				onclick='location.href="/member/mem/${member.num}"'>
+			<form th:formaction="@{'/member/mem/' + ${member.num}}" method="DELETE">
+				<input type="submit" th:value="delete">
+			<form>
+		</div>
+	</div>
+</body>
+</html>

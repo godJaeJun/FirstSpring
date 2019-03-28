@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.member.mapper.MemberMapper">
+	
+	<!--memberInsert : 회원 생성  -->
+	<insert id="memberInsert"
+		parameterType="com.member.domain.MemberVO">
+		insert into member
+		values
+		(#{num},#{name},#{age})
+	</insert>
+	
+	<!--memberList : 회원 목록  -->
+	<select id="memberList" resultType="com.member.domain.MemberVO">
+		select * from member
+	</select>
+	
+	<!--memberView : 회원 상세  -->
+	<select id="memberView" parameterType="int"
+		resultType="com.member.domain.MemberVO">
+		select * from member where num = #{num}
+	</select>
+
+	<!--memberUpdate : 회원 수정  parameterType은 회원 정보자체를 수정할 것이기 때문에 MemberVo로 한다.-->
+	<update id="memberUpdate"
+		parameterType="com.member.domain.MemberVO">
+		update member set name=#{name},age=#{age} where num = #{num}
+	</update>
+
+	<!--memberDelete : 회원 삭제, parameterType은 회원 번호를 가져오기 때문에 int를 가져온다.  -->
+	<delete id="memberDelete" parameterType="int">
+		delete from member where num = #{num}
+	</delete>
+</mapper>

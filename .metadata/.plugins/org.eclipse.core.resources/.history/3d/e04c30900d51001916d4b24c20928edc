@@ -1,0 +1,17 @@
+package com.member;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class MemberApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(MemberApplication.class, args);
+	}
+	
+	/*
+	 * MyBatis 어노테이션을 이용해서 Mapper 인터페이스를 인식하도록 한다.
+	 * 
+	*/
+}
